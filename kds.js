@@ -20,23 +20,23 @@
 
     function llNodeFactory(value) {
 
-        return Object.assign({
+        return Object.assign ( Object.create(llNodeProto), {
 
             val : value,
             next: null,
 
-        }, llNodeProto);
+        });
 
     };
 
     function linkedListFactory(array) {
 
-        const list = Object.assign({
+        const list = Object.assign( Object.create(llProto), {
             head: null,
             tail: null,
             length: array.length,
-
-        }, llProto );
+        });
+        
         
         if(array.length < 1 ) return list;
         
